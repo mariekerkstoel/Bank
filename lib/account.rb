@@ -16,7 +16,7 @@ class Account
     @transaction.balance_transaction = @balance
   end
 
-  def print_account_statement(printer = Print, information = @balance)
+  def print_account_statement(printer = Print, information = @transactions)
     @printer = printer.new
     @printer.print_statement(information)
   end
