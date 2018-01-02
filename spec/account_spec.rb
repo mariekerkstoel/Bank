@@ -27,5 +27,9 @@ describe Account do
     it 'should take an argument type' do
       expect { account.add_transaction }.to raise_error
     end
+    it 'should add to the balance if a deposit has been made' do
+      account.add_transaction(6, 'Deposit')
+      expect(account.balance).to eq(6)
+    end
   end
 end

@@ -9,7 +9,7 @@ describe Withdrawal do
       expect(withdrawal.amount).to eq(0)
     end
     it 'should have the given amount' do
-      expect(withdrawal1.amount).to eq(4)
+      expect(withdrawal1.amount).to eq(-4)
     end
   end
 end
