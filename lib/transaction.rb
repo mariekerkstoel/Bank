@@ -10,8 +10,8 @@ class Transaction
     create_action(amount, type)
   end
 
-  def create_action(amount, type)
-    @action = Deposit.new(amount) if type == 'Deposit'
-    @action = Withdrawal.new(amount) if type == 'Withdrawal'
+  def create_action(amount, type, deposit = Deposit, withdrawal = Withdrawal)
+    @action = deposit.new(amount) if type == 'Deposit'
+    @action = withdrawal.new(amount) if type == 'Withdrawal'
   end
 end
