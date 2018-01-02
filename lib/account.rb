@@ -11,6 +11,4 @@ class Account
     @transaction = Transaction.new(amount, type)
     @transactions.push(@transaction)
   end
-
-
 end
