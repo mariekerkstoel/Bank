@@ -7,6 +7,9 @@ describe Transaction do
     it 'every transaction should have a date' do
       expect(transaction.date).to be_truthy
     end
+    it 'should initialize with a balance of 0 that is adjusted later' do
+      expect(transaction.balance_transaction).to eq 0
+    end
   end
   describe '#create_action' do
     it 'should take 2 arguments' do
