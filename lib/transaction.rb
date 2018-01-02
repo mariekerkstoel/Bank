@@ -4,10 +4,12 @@ require './lib/withdrawal.rb'
 
 class Transaction
   attr_reader :date, :action
+  attr_accessor :balance_transaction
 
   def initialize(amount, type)
     @date = Time.new
     create_action(amount, type)
+    @balance_transaction = 0
   end
 
   def create_action(amount, type, deposit = Deposit, withdrawal = Withdrawal)
