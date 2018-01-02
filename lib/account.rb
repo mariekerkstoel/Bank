@@ -1,4 +1,5 @@
 require './lib/transaction.rb'
+require './lib/print.rb'
 class Account
   attr_reader :balance, :transactions, :transaction
 
@@ -11,5 +12,10 @@ class Account
     @transaction = transaction.new(amount, type)
     @transactions.push(@transaction)
     @balance += @transaction.action.amount
+  end
+
+  def print_account_statement(printer = Print, information = @balance)
+    @printer = printer.new
+    @printer.print_statement(information)
   end
 end

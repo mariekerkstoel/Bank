@@ -37,4 +37,11 @@ describe Account do
       expect(account.balance).to eq(4)
     end
   end
+
+  describe '#print_account_statement' do
+    it 'should print account information' do
+      account.add_transaction(4, 'Withdrawal')
+      expect{ account.print_account_statement }.to output('-4').to_stdout
+    end
+  end
 end
