@@ -25,7 +25,7 @@ describe Account do
       expect(account.transactions).to_not be_empty
     end
     it 'should take an argument type' do
-      expect {account.add_transaction}.to raise_error
+      expect { account.add_transaction }.to raise_error
     end
   end
 end
