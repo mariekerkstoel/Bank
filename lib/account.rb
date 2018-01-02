@@ -10,5 +10,6 @@ class Account
   def add_transaction(amount, type)
     @transaction = Transaction.new(amount, type)
     @transactions.push(@transaction)
+    @balance += @transaction.action.amount
   end
 end
