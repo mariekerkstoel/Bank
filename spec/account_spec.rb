@@ -1,9 +1,11 @@
 require 'spec_helper'
 require 'account'
+require 'transaction'
 
 describe Account do
   let(:account) { described_class.new }
   let(:account1) { described_class.new(64) }
+  let(:transaction) { double :transaction }
   describe '#balance' do
     it 'should show me an initial balance of 0' do
       expect(account.balance).to eq(0)
@@ -14,6 +16,10 @@ describe Account do
   end
 
   describe '#add_transaction' do
+    it 'should create a transaction' do
+      account.add_transaction(transaction)
+      expect(account.transaction).to be_truthy
+    end
     it 'should save a transaction' do
       account.add_transaction
       expect(account.transactions).to_not be_empty
