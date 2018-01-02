@@ -36,6 +36,16 @@ describe Account do
       account.add_transaction(6, 'Withdrawal')
       expect(account.balance).to eq(4)
     end
+    it 'should save the balance of the account after the transaction' do
+      account.add_transaction(10, 'Deposit')
+      expect(account.transactions[0].balance_transaction).to eq(10)
+    end
+    it 'should save the balance of the account after the transaction' do
+      account.add_transaction(10, 'Deposit')
+      account.add_transaction(6, 'Withdrawal')
+      expect(account.transactions[0].balance_transaction).to eq(10)
+      expect(account.transactions[1].balance_transaction).to eq(4)
+    end
   end
 
   describe '#print_account_statement' do
