@@ -7,5 +7,5 @@ describe Transaction do
     it 'every transaction should have a date' do
       expect(transaction.date).to be_truthy
     end
-   end
+  end
 end
