@@ -5,7 +5,7 @@ require './lib/withdrawal.rb'
 class Transaction
   attr_reader :date
 
-  def initialize
-    @date = Date.new
+  def initialize(amount, type)
+    @date = Time.new
   end
 end

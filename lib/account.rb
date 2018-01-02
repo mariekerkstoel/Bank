@@ -7,8 +7,10 @@ class Account
     @transactions = []
   end
 
-  def add_transaction(transaction = Transaction.new)
-    @transaction = transaction
-    @transactions << @transactions
+  def add_transaction(amount, type)
+    @transaction = Transaction.new(amount, type)
+    @transactions.push(@transaction)
   end
+
+
 end

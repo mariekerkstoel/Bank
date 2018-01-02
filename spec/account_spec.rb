@@ -17,12 +17,15 @@ describe Account do
 
   describe '#add_transaction' do
     it 'should create a transaction' do
-      account.add_transaction(transaction)
+      account.add_transaction(4, 'Withdrawal')
       expect(account.transaction).to be_truthy
     end
     it 'should save a transaction' do
-      account.add_transaction
+      account.add_transaction(6, 'Deposit')
       expect(account.transactions).to_not be_empty
+    end
+    it 'should take an argument type' do
+      expect {account.add_transaction}.to raise_error
     end
   end
 end
