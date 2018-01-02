@@ -31,5 +31,10 @@ describe Account do
       account.add_transaction(6, 'Deposit')
       expect(account.balance).to eq(6)
     end
+    it 'should subtract from the balance if a withdrawal is made' do
+      account.add_transaction(10, 'Deposit')
+      account.add_transaction(6, 'Withdrawal')
+      expect(account.balance).to eq(4)
+    end
   end
 end
