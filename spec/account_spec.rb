@@ -5,7 +5,7 @@ require 'transaction'
 describe Account do
   let(:account) { described_class.new }
   let(:account1) { described_class.new(64) }
-  let(:transaction) { double :transaction }
+  let(:transaction) { double :transaction, new: 'uqzegfiuze'}
   describe '#balance' do
     it 'should show me an initial balance of 0' do
       expect(account.balance).to eq(0)
@@ -19,6 +19,10 @@ describe Account do
     it 'should create a transaction' do
       account.add_transaction(4, 'Withdrawal')
       expect(account.transaction).to be_truthy
+    end
+    it 'transaction should receive to new' do
+      account.add_transaction(4, 'Withdrawal', transaction)
+      expect(transaction).to receive(:new)
     end
     it 'should save a transaction' do
       account.add_transaction(6, 'Deposit')
