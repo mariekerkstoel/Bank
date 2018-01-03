@@ -8,4 +8,6 @@ group :test, :development do
   gem 'rspec'
 end
 
+gem 'simplecov', require: false
+gem 'simplecov-console', require: false
 gem 'rubocop'
